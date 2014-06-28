@@ -1,0 +1,210 @@
+body {
+	margin: 0;
+	padding: 0;
+	background-color: rgb(248, 248, 248);
+}
+
+main {
+	width: 50%;
+	margin: 0 auto;
+	min-width: 20em;
+}
+
+div#view {
+	font-family: monospace;
+	margin: 1em 0;
+	font-size: 2em;
+	height: 5em;
+	background-color: rgb(234, 234, 234);
+	position: relative;
+}
+
+div#view::before {
+	content: '';
+	
+	position: absolute;
+		top: 0;
+		bottom: 0;
+		left: 3em;
+	
+	display: block;
+	z-index: +1;
+	
+	width: 1em;
+	
+	background-image: linear-gradient(to right, rgba(248, 248, 248, 1), rgba(248, 248, 248, 0));
+}
+
+div#view::after {
+	content: '';
+	
+	position: absolute;
+		top: 0;
+		right: 0;
+		bottom: 0;
+	
+	display: block;
+	z-index: +1;
+	
+	width: 1em;
+	
+	background-image: linear-gradient(to left, rgba(248, 248, 248, 1), rgba(248, 248, 248, 0));
+}
+
+div#view-content {
+	position: absolute;
+		top: 0em;
+		right: 0;
+		left: 3em;
+	height: inherit;
+	line-height: 4em;
+	white-space: nowrap;
+	overflow-y: hidden;
+	overflow-x: scroll;
+}
+
+div#strip {
+	display: block;
+	vertical-align: middle;
+}
+
+div#strip div.cell,
+div#strip button#plus-left,
+div#strip button#plus-right {
+	cursor: pointer;
+	display: inline-block;
+	text-align: center;
+	width: 2em;
+	height: 2em;
+	line-height: 2em;
+	background-color: rgb(248, 248, 248);
+	border-width: 1px 0 1px 1px;
+	border-style: solid;
+	border-color: black;
+}
+
+div#strip div.cell:nth-last-child(-n+2) {
+	border-right-width: 1px;
+}
+
+div#strip button#plus-left {
+	margin: 0 0 0 3em;
+}
+
+div#strip button#plus-right {
+	border-width: 1px 1px 1px 0;
+	margin: 0 3em 0 0;
+}
+
+div#strip div.cell.selected {
+	color: red;
+	background-color: rgb(255, 255, 255);
+}
+
+div#strip div.cell.initial {
+	border-color: rgb(0, 0, 255) rgb(0, 0, 0);
+	border-top-width: 2px;
+	border-bottom-width: 2px;
+}
+
+div#info {
+	position: absolute;
+		top: 0;
+		bottom: 0;
+		left: 0;
+	
+	width: 3em;
+	height: 5em;
+	line-height: 4em;
+	
+	background-color: rgb(220, 220, 220);
+	border-width: 0 1px 0 0;
+	border-style: solid;
+	border-color: rgb(248, 248, 248);
+}
+
+div#info div#info-content {
+	vertical-align: middle;
+	display: inline-block;
+	width: inherit;
+}
+
+div#info-content span#state,
+div#info-content span#steps {
+	background-color: rgb(248, 248, 248);
+	display: block;
+	margin: 0.2em 0;
+	width: inherit;
+	height: 1.5em;
+	line-height: 1.5em;
+	text-align: center;
+}
+
+menu {
+	margin: 0;
+	padding: 0;
+	display: table;
+	width: 100%;
+}
+
+menu div#rules {
+	font-size: 1.2em;
+	display: table-cell;
+	width: 65%;
+	
+	background-color: rgb(255, 255, 255);
+	border: 1px solid rgb(220, 220, 220);
+}
+
+menu div#rules table {
+	width: 80%;
+	margin: 0.5em auto;
+	border-collapse: collapse;
+}
+
+menu div#rules table td,
+menu div#rules table th {
+	text-align: center;
+	border: 1px solid black;
+}
+
+menu div#rules table tfoot button {
+	display: block;
+	width: 60%;
+	margin: 0.5em auto;
+}
+
+menu div.separator {
+	display: table-cell;
+	width: 5%;
+}
+
+menu div#controls {
+	display: table-cell;
+	
+	background-color: rgb(255, 255, 255);
+	border: 1px solid rgb(220, 220, 220);
+}
+
+menu div#controls button {
+	display: block;
+	width: 80%;
+	font-size: 1.2em;
+	margin: 0.5em auto;
+}
+
+menu div#controls button.active {
+	background-color: rgb(128, 255, 128);
+}
+
+menu div#controls button.inactive {
+	background-color: rgb(255, 128, 128);
+}
+
+menu div#controls div#blank-symbol {
+	font-size: 2em;
+	width: 80%;
+	margin: 0.5em auto;
+	text-align: center;
+	border: 1px solid rgb(220, 220, 220);
+}
