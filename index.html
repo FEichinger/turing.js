@@ -15,6 +15,7 @@
 					<div id="info-content">
 						<span id="state"></span>
 						<span id="steps"></span>
+						<span id="blank-symbol">#</span>
 					</div>
 				</div>
 			</div>
@@ -51,7 +52,9 @@
 				<div id="controls">
 					<button id="run-toggle">Start</button>
 					<button id="reset">Reset</button>
-					<div id="blank-symbol">#</div>
+					<div class="separator"></div>
+					<textarea>{"word": "0", "rules": [{"conds": {"state": "A", "read": "0"}, "actions": {"write": "1", "move": "R", "state": "B"}}, {"conds": {"state": "B", "read": "0"}, "actions": {"write": "1", "move": "L", "state": "A"}}, {"conds": {"state": "A", "read": "1"}, "actions": {"write": "1", "move": "L", "state": "B"}}, {"conds": {"state": "B", "read": "1"}, "actions": {"write": "1", "move": "R", "state": "H"}}], "blank": "0", "state": "A"}</textarea>
+					<button id="load">Load</button>
 				</div>
 			</menu>
 		</main>

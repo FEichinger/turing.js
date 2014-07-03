@@ -14,7 +14,7 @@ div#view {
 	font-family: monospace;
 	margin: 1em 0;
 	font-size: 2em;
-	height: 5em;
+	height: 6em;
 	background-color: rgb(234, 234, 234);
 	position: relative;
 }
@@ -25,7 +25,7 @@ div#view::before {
 	position: absolute;
 		top: 0;
 		bottom: 0;
-		left: 3em;
+		left: 4em;
 	
 	display: block;
 	z-index: +1;
@@ -55,9 +55,9 @@ div#view-content {
 	position: absolute;
 		top: 0em;
 		right: 0;
-		left: 3em;
+		left: 4em;
 	height: inherit;
-	line-height: 4em;
+	line-height: 5em;
 	white-space: nowrap;
 	overflow-y: hidden;
 	overflow-x: scroll;
@@ -66,6 +66,9 @@ div#view-content {
 div#strip {
 	display: block;
 	vertical-align: middle;
+	text-align: center;
+	width: 100%;
+	padding: 0 50%;
 }
 
 div#strip div.cell,
@@ -74,9 +77,9 @@ div#strip button#plus-right {
 	cursor: pointer;
 	display: inline-block;
 	text-align: center;
-	width: 2em;
-	height: 2em;
-	line-height: 2em;
+	width: 2.5em;
+	height: 2.5em;
+	line-height: 2.5em;
 	background-color: rgb(248, 248, 248);
 	border-width: 1px 0 1px 1px;
 	border-style: solid;
@@ -87,17 +90,11 @@ div#strip div.cell:nth-last-child(-n+2) {
 	border-right-width: 1px;
 }
 
-div#strip button#plus-left {
-	margin: 0 0 0 3em;
-}
-
 div#strip button#plus-right {
 	border-width: 1px 1px 1px 0;
-	margin: 0 3em 0 0;
 }
 
 div#strip div.cell.initial {
-	color: red;
 	background-color: rgb(255, 255, 255);
 }
 
@@ -113,9 +110,9 @@ div#info {
 		bottom: 0;
 		left: 0;
 	
-	width: 3em;
-	height: 5em;
-	line-height: 4em;
+	width: 4em;
+	height: 6em;
+	line-height: 6em;
 	
 	background-color: rgb(220, 220, 220);
 	border-width: 0 1px 0 0;
@@ -129,8 +126,7 @@ div#info div#info-content {
 	width: inherit;
 }
 
-div#info-content span#state,
-div#info-content span#steps {
+div#info-content > span {
 	background-color: rgb(248, 248, 248);
 	display: block;
 	margin: 0.2em 0;
@@ -138,6 +134,14 @@ div#info-content span#steps {
 	height: 1.5em;
 	line-height: 1.5em;
 	text-align: center;
+}
+
+div#info-content > span:first-child {
+	margin-top: 0;
+}
+
+div#info-content > span:last-child {
+	margin-bottom: 0;
 }
 
 menu {
@@ -174,7 +178,7 @@ menu div#rules table tfoot button {
 	margin: 0.5em auto;
 }
 
-menu div.separator {
+menu > div.separator {
 	display: table-cell;
 	width: 5%;
 }
@@ -186,11 +190,25 @@ menu div#controls {
 	border: 1px solid rgb(220, 220, 220);
 }
 
-menu div#controls button {
+menu div#controls button,
+menu div#controls textarea {
 	display: block;
 	width: 80%;
 	font-size: 1.2em;
 	margin: 0.5em auto;
+}
+
+menu div#controls textarea {
+	padding: 0;
+	height: 6em;
+	resize: vertical;
+}
+
+menu div#controls div.separator {
+	height: 1px;
+	background-color: rgb(220, 220, 220);
+	margin: 1em auto;
+	width: 80%;
 }
 
 menu div#controls button.active {
@@ -201,10 +219,3 @@ menu div#controls button.inactive {
 	background-color: rgb(255, 128, 128);
 }
 
-menu div#controls div#blank-symbol {
-	font-size: 2em;
-	width: 80%;
-	margin: 0.5em auto;
-	text-align: center;
-	border: 1px solid rgb(220, 220, 220);
-}
