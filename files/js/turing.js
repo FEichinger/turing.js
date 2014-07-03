@@ -24,7 +24,7 @@ de.vad_systems.turing.controls = {};
 		var cell = document.querySelector("div#strip div.cell.selected");
 		cell.classList.remove("selected");
 		cell.previousSibling.classList.add("selected");
-		document.querySelector("#view-content").scrollRight = cell.offsetRight;
+		document.querySelector("#view-content").scrollLeft = cell.offsetLeft;
 	};
 	
 	de.vad_systems.turing.controls.moveRight = function () {
