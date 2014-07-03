@@ -226,6 +226,7 @@ de.vad_systems.turing.io = {};
 	
 	/* Stop */
 	de.vad_systems.turing.io.stop = function () {
+		de.vad_systems.turing.semaphor = 0;
 		window.clearInterval(de.vad_systems.turing.interval);
 		var buttonToggle = document.querySelector("#run-toggle");
 		buttonToggle.textContent = "Start";
