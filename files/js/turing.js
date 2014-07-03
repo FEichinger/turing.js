@@ -90,7 +90,7 @@ de.vad_systems.turing.executeRule = function (rule) {
 	};
 	
 	window.setTimeout(write, 100);
-	window.setTimeout(move, 150);
+	window.setTimeout(move, 200);
 };
 
 /* Overflow Check */
