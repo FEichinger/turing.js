@@ -261,7 +261,7 @@ de.vad_systems.turing.io = {};
 		if(data.blank == undefined || data.blank === null) data.blank = document.querySelector("#info #blank-symbol").textContent;
 		document.querySelector("div#info #blank-symbol").textContent = data.blank.charAt(0);
 		
-		if(data.word == undefined || data.word === null) data.word = "#";
+		if(data.word == undefined || data.word === null) data.word = data.blank.charAt(0);
 		de.vad_systems.turing.initStrip(data.word);
 		
 		if(data.state == undefined || data.state === null) data.state = "1";
@@ -273,6 +273,7 @@ de.vad_systems.turing.io = {};
 
 /* Init */
 de.vad_systems.turing.initialize = function (soft) {
+	de.vad_systems.turing.semaphor = 0;
 	de.vad_systems.turing.initStrip();
 	de.vad_systems.turing.initInfo(soft);
 	de.vad_systems.turing.initControls();
