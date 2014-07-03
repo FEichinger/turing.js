@@ -89,8 +89,8 @@ de.vad_systems.turing.executeRule = function (rule) {
 		de.vad_systems.turing.semaphor--;
 	};
 	
-	window.setTimeout(write, 100);
-	window.setTimeout(move, 200);
+	write();
+	window.setTimeout(move, 250);
 };
 
 /* Overflow Check */
