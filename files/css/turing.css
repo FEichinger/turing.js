@@ -96,12 +96,12 @@ div#strip button#plus-right {
 	margin: 0 3em 0 0;
 }
 
-div#strip div.cell.selected {
+div#strip div.cell.initial {
 	color: red;
 	background-color: rgb(255, 255, 255);
 }
 
-div#strip div.cell.initial {
+div#strip div.cell.selected {
 	border-color: rgb(0, 0, 255) rgb(0, 0, 0);
 	border-top-width: 2px;
 	border-bottom-width: 2px;
