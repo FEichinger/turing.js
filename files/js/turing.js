@@ -283,7 +283,7 @@ de.vad_systems.turing.initialize = function (soft) {
 };
 
 de.vad_systems.turing.initStrip = function (word) {
-	if(word == undefined || word === null) word = "#";
+	if(word == undefined || word === null) word = document.querySelector("#info #blank-symbol").textContent.charAt(0);
 	
 	var strip = document.querySelector("#strip");
 	strip.innerHTML = "";
