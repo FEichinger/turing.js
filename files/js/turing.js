@@ -76,6 +76,8 @@ de.vad_systems.turing.executeRule = function (rule) {
 		}
 	};
 	
+	write();
+	
 	var move = function () {
 		switch(rule.querySelector("td.action_move").textContent) {
 			case "R":
@@ -89,8 +91,7 @@ de.vad_systems.turing.executeRule = function (rule) {
 		de.vad_systems.turing.semaphor--;
 	};
 	
-	write();
-	window.setTimeout(move, 250);
+	window.setTimeout(move, 400);
 };
 
 /* Overflow Check */
