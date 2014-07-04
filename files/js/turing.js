@@ -5,6 +5,7 @@ de.vad_systems.turing = {};
 /* Variables */
 de.vad_systems.turing.interval = -1;
 de.vad_systems.turing.semaphor = 0;
+de.vad_systems.turing.speed = 1000;
 
 /* Machine Controls */
 de.vad_systems.turing.controls = {};
@@ -76,7 +77,7 @@ de.vad_systems.turing.executeRule = function (rule) {
 		}
 	};
 	
-	write();
+	window.setTimeout(write, (de.vad_systems.turing.speed / 5));
 	
 	var move = function () {
 		switch(rule.querySelector("td.action_move").textContent) {
@@ -91,7 +92,7 @@ de.vad_systems.turing.executeRule = function (rule) {
 		de.vad_systems.turing.semaphor--;
 	};
 	
-	window.setTimeout(move, 400);
+	window.setTimeout(move, ((de.vad_systems.turing.speed / 5) * 4));
 };
 
 /* Overflow Check */
@@ -219,7 +220,7 @@ de.vad_systems.turing.event = {};
 de.vad_systems.turing.io = {};
 	/* Start */
 	de.vad_systems.turing.io.start = function () {
-		de.vad_systems.turing.interval = window.setInterval(de.vad_systems.turing.tick, 500);
+		de.vad_systems.turing.interval = window.setInterval(de.vad_systems.turing.tick, (de.vad_systems.turing.speed / 5));
 		var buttonToggle = document.querySelector("#run-toggle");
 		buttonToggle.textContent = "Stop";
 		buttonToggle.className = "active";

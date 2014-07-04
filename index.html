@@ -7,6 +7,7 @@
 	</head>
 	<body>
 		<main>
+			<h1>Turing.JS</h1>
 			<div id="view">
 				<div id="view-content">
 					<div id="strip"></div>
@@ -57,6 +58,30 @@
 					<button id="load">Load</button>
 				</div>
 			</menu>
+			<div id="examples">
+				<div class="example">
+					<h2>Busy Beaver, 2-state</h2>
+					<pre>{"word": "0", "rules": [
+{"conds": {"state": "A", "read": "0"}, "actions": {"write": "1", "move": "R", "state": "B"}}, 
+{"conds": {"state": "B", "read": "0"}, "actions": {"write": "1", "move": "L", "state": "A"}}, 
+{"conds": {"state": "A", "read": "1"}, "actions": {"write": "1", "move": "L", "state": "B"}}, 
+{"conds": {"state": "B", "read": "1"}, "actions": {"write": "1", "move": "R", "state": "H"}}
+], "blank": "0", "state": "A"}</pre>
+				</div>
+				<div class="example">
+					<h2>Busy Beaver, 4-state</h2>
+					<pre>{"word": "0", "rules": [
+{"conds": {"state": "A", "read": "0"}, "actions": {"write": "1", "move": "r", "state": "B"}}, 
+{"conds": {"state": "B", "read": "0"}, "actions": {"write": "1", "move": "l", "state": "A"}}, 
+{"conds": {"state": "C", "read": "0"}, "actions": {"write": "1", "move": "r", "state": "H"}}, 
+{"conds": {"state": "D", "read": "0"}, "actions": {"write": "1", "move": "r", "state": "D"}}, 
+{"conds": {"state": "A", "read": "1"}, "actions": {"write": "1", "move": "l", "state": "B"}}, 
+{"conds": {"state": "B", "read": "1"}, "actions": {"write": "0", "move": "l", "state": "C"}}, 
+{"conds": {"state": "C", "read": "1"}, "actions": {"write": "1", "move": "l", "state": "D"}}, 
+{"conds": {"state": "D", "read": "1"}, "actions": {"write": "0", "move": "r", "state": "A"}}
+], "blank": "0", "state": "A"}</pre>
+				</div>
+			</div>
 		</main>
 		<script type="application/javascript">de.vad_systems.turing.initialize();</script>
 	</body>
